@@ -11,6 +11,6 @@ export const lightTheme = {
     // rem unit
     xl: 5.5,
     lg: 2.5,
-    m: 1.7,
+    m: 1,
   },
 }
