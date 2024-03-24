@@ -6,6 +6,9 @@ export const lightTheme = {
     text: '#767676',
     text2: '#555',
     primary: '#147efb',
+
+    footerBackground: '#2d2e32',
+    footerText: '#fff',
   },
   fonts: {
     // rem unit
