@@ -1,0 +1,9 @@
+{
+  "translation": {
+    "Home": "Home",
+    "About": "About",
+    "Projects": "Projects",
+    "Contact": "Contact",
+    "Copyright": "Copyright © {{year}}. All rights are reserved"
+  }
+}

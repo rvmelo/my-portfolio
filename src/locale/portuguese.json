@@ -1,0 +1,9 @@
+{
+  "translation": {
+    "Home": "Início",
+    "About": "Sobre",
+    "Projects": "Projetos",
+    "Contact": "Contato",
+    "Copyright": "Copyright © {{year}}. All rights are reserved"
+  }
+}

@@ -4,15 +4,18 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { useTheme } from 'styled-components'
 import { ContentContainer } from '../styles'
 import { FooterContainer, FooterContent, IconWrapper } from './styles'
+import { useTranslation } from 'react-i18next'
 
 export const Footer: React.FC = () => {
   const theme = useTheme()
+
+  const { t } = useTranslation()
 
   return (
     <FooterContainer>
       <ContentContainer>
         <FooterContent>
-          <span>Copyright © 2024. All rights are reserved</span>
+          <span>{t('Copyright', { year: new Date().getFullYear() })}</span>
           <IconWrapper>
             <a
               href="https://www.linkedin.com/in/roberto-melo-04a6a0158/"
