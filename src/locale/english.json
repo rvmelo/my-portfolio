@@ -4,6 +4,9 @@
     "About": "About",
     "Projects": "Projects",
     "Contact": "Contact",
-    "Copyright": "Copyright © {{year}}. All rights are reserved"
+    "Copyright": "Copyright © {{year}}. All rights are reserved",
+    "Language": "Language",
+    "English": "English",
+    "Portuguese": "Portuguese"
   }
 }
