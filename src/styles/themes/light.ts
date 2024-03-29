@@ -5,7 +5,7 @@ export const lightTheme = {
     title: '#2d2e32',
     text: '#767676',
     text2: '#555',
-    primary: '#147efb',
+    primary: '#22C55E',
 
     footerBackground: '#2d2e32',
     footerText: '#fff',

@@ -85,7 +85,7 @@ export const LanguageModalContainer = styled.div`
   }
 
   li:hover {
-    background: rgb(20, 126, 251, 0.3);
+    background: rgb(34, 197, 94, 0.3);
     transition: all 0.23s;
   }
 `
