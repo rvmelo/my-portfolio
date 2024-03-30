@@ -44,11 +44,7 @@ export const Intro: React.FC = () => {
               </a>
             </IconWrapper>
           </IntroLeftSection>
-          <img
-            className="profilePicture"
-            src="https://i.imgur.com/AJgMkSp.jpg"
-            alt=""
-          />
+          <div className="profilePicture" />
         </IntroContentWrapper>
         <TechContainer>
           <TechTitleContainer>
