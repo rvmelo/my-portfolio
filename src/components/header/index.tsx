@@ -1,14 +1,20 @@
 import React from 'react'
 import {
   HeaderContainer,
+  IconContainer,
   LanguageModalContainer,
   NavigationWrapper,
 } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useLanguageModal } from '../../contexts/languageModal'
+import { useTheme } from 'styled-components'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Header: React.FC = () => {
   const { t } = useTranslation()
+
+  const theme = useTheme()
 
   const { setIsModalOpened, isModalOpened, handleLanguageSelection } =
     useLanguageModal()
@@ -33,6 +39,14 @@ export const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
+
+        <IconContainer>
+          <FontAwesomeIcon
+            icon={faBars}
+            color={theme.colors.footerBackground}
+          />
+        </IconContainer>
+
         <LanguageModalContainer
           data-state={isModalOpened ? 'opened' : 'closed'}
         >

@@ -43,6 +43,25 @@ export const NavigationWrapper = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     transition: color 0.23s;
   }
+
+  @media (max-width: 700px) {
+    nav {
+      display: none;
+    }
+  }
+`
+
+export const IconContainer = styled.div`
+  display: none;
+  @media (max-width: 700px) {
+    cursor: pointer;
+    display: inline;
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
 `
 
 export const LanguageModalContainer = styled.div`
@@ -58,6 +77,7 @@ export const LanguageModalContainer = styled.div`
   }
 
   &[data-state='closed'] {
+    display: none;
     transition: opacity 0.23s;
     opacity: 0;
   }
