@@ -23,6 +23,7 @@ export const Intro: React.FC = () => {
     <IntroContainer>
       <ContentContainer>
         <IntroContentWrapper>
+          <div className="mobileProfilePicture" />
           <IntroLeftSection>
             <h1>{t('BioTitle')}</h1>
             <span className="bioText">{t('Bio')}</span>
@@ -49,7 +50,8 @@ export const Intro: React.FC = () => {
         <TechContainer>
           <TechTitleContainer>
             <span className="techText">Tech Stack</span>
-            <span className="techText">|</span>
+            <div className="underline" />
+            <div className="mobileUnderline" />
           </TechTitleContainer>
           <TechLogoContainer>
             <img src="https://skillicons.dev/icons?i=html,css" alt="html/css" />

@@ -49,14 +49,38 @@ export const IntroContentWrapper = styled.div`
 
   width: 100%;
 
+  .mobileProfilePicture {
+    display: none;
+  }
+
+  @media (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .mobileProfilePicture {
+      display: inline;
+      min-width: 18.75rem;
+      min-height: 18.75rem;
+      border-radius: 100%;
+      background-image: url(${profilePicture});
+      background-size: cover;
+      animation: ${GlitchAnimation} 3.5s infinite steps(1);
+    }
+  }
+
   .profilePicture {
     min-width: 18.75rem;
     min-height: 18.75rem;
     border-radius: 100%;
-    background: purple;
     background-image: url(${profilePicture});
     background-size: cover;
     animation: ${GlitchAnimation} 3.5s infinite steps(1);
+
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
 `
 
@@ -66,12 +90,25 @@ export const IntroLeftSection = styled.div`
   align-items: flex-start;
   gap: 1rem;
 
+  @media (max-width: 950px) {
+    align-items: center;
+  }
+
   h1 {
     font-size: ${({ theme }) => theme.fonts.lg};
+
+    @media (max-width: 950px) {
+      font-size: 2rem;
+      text-align: center;
+    }
   }
 
   .bioText {
     color: ${({ theme }) => theme.colors.text2};
+
+    @media (max-width: 950px) {
+      text-align: center;
+    }
   }
 `
 
@@ -82,9 +119,13 @@ export const IconWrapper = styled.div`
 
   gap: 0.75rem;
 
+  @media (max-width: 950px) {
+    margin-top: 1.2rem;
+  }
+
   svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.8rem;
+    height: 1.8rem;
     cursor: pointer;
     transition: color 0.23s ease-in-out;
   }
@@ -102,6 +143,11 @@ export const TechContainer = styled.div`
   gap: 0.75rem;
 
   margin-top: 4rem;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `
 
 export const TechTitleContainer = styled.div`
@@ -119,13 +165,41 @@ export const TechTitleContainer = styled.div`
     color: ${({ theme }) => theme.colors.title};
     white-space: nowrap;
   }
+
+  .underline {
+    width: 1px;
+    height: 1.5rem;
+    border: solid 1px ${({ theme }) => theme.colors.text};
+  }
+
+  .mobileUnderline {
+    display: none;
+  }
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    margin-right: 0;
+
+    .underline {
+      display: none;
+    }
+
+    .mobileUnderline {
+      display: inline;
+      height: 1px;
+      width: 5.7rem;
+      border: solid 1px ${({ theme }) => theme.colors.text};
+    }
+  }
 `
 
 export const TechLogoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: center=;
+  align-items: center;
   gap: 2rem;
 
   img {

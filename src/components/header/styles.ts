@@ -44,7 +44,7 @@ export const NavigationWrapper = styled.div`
     transition: color 0.23s;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 950px) {
     nav {
       display: none;
     }
@@ -53,7 +53,7 @@ export const NavigationWrapper = styled.div`
 
 export const IconContainer = styled.div`
   display: none;
-  @media (max-width: 700px) {
+  @media (max-width: 950px) {
     cursor: pointer;
     display: inline;
 
