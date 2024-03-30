@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  gird-template-columns: 1fr;
   background: ${({ theme }) => theme.colors.background2};
 `

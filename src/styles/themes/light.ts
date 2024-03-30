@@ -13,7 +13,7 @@ export const lightTheme = {
   fonts: {
     // rem unit
     xl: '5.5rem',
-    lg: '2.5rem',
+    lg: '3rem',
     m: '1rem',
     sm: '0.75rem',
   },
