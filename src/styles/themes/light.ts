@@ -14,6 +14,7 @@ export const lightTheme = {
     // rem unit
     xl: '5.5rem',
     lg: '3rem',
+    m2: '1.7rem',
     m: '1rem',
     sm: '0.75rem',
   },

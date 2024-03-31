@@ -6,6 +6,7 @@ import glitchPicture03 from '../../../assets/eu-glitch-03.png'
 
 export const IntroContainer = styled.div`
   padding: 3rem 0;
+  background: ${({ theme }) => theme.colors.background2};
 `
 
 const GlitchAnimation = keyframes`
