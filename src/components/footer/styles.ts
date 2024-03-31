@@ -19,6 +19,11 @@ export const FooterContent = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 950px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   span {
     color: ${({ theme }) => theme.colors.footerText};
     font-size: ${({ theme }) => theme.fonts.m};
