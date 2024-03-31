@@ -8,8 +8,6 @@ export const AboutContainer = styled.section`
 
   width: 100%;
 
-  padding: 3rem 0;
-
   img {
     width: 23rem;
     height: 23rem;
@@ -19,8 +17,10 @@ export const AboutContainer = styled.section`
 
   @media (max-width: 950px) {
     img {
-      width: 18.75rem;
-      height: 18.75rem;
+      max-width: 18.75rem;
+      max-height: 18.75rem;
+      width: 100%;
+      height: 100%;
     }
 
     flex-direction: column;

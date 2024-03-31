@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  padding: 3.8rem 0;
+  padding: 0.75rem 0;
   background: ${({ theme }) => theme.colors.footerBackground};
 `
 
@@ -22,6 +22,10 @@ export const FooterContent = styled.div`
   @media (max-width: 950px) {
     flex-direction: column;
     gap: 2rem;
+
+    span {
+      text-align: center;
+    }
   }
 
   span {

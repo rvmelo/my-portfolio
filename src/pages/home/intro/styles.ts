@@ -5,7 +5,6 @@ import glitchPicture02 from '../../../assets/eu-glitch-02.png'
 import glitchPicture03 from '../../../assets/eu-glitch-03.png'
 
 export const IntroContainer = styled.div`
-  padding: 3rem 0;
   background: ${({ theme }) => theme.colors.background2};
 `
 
@@ -62,8 +61,8 @@ export const IntroContentWrapper = styled.div`
 
     .mobileProfilePicture {
       display: inline;
-      min-width: 18.75rem;
-      min-height: 18.75rem;
+      min-width: 15rem;
+      min-height: 15rem;
       border-radius: 100%;
       background-image: url(${profilePicture});
       background-size: cover;
