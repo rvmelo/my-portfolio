@@ -11,7 +11,11 @@ import { useTheme } from 'styled-components'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  handleHeaderModal: (value: boolean) => void
+}
+
+export const Header: React.FC<HeaderProps> = ({ handleHeaderModal }) => {
   const { t } = useTranslation()
 
   const theme = useTheme()
@@ -44,6 +48,7 @@ export const Header: React.FC = () => {
           <FontAwesomeIcon
             icon={faBars}
             color={theme.colors.footerBackground}
+            onClick={() => handleHeaderModal(true)}
           />
         </IconContainer>
 
