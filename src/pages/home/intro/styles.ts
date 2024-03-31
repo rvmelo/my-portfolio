@@ -202,6 +202,10 @@ export const TechLogoContainer = styled.div`
   align-items: center;
   gap: 2rem;
 
+  @media (max-width: 950px) {
+    justify-content: center;
+  }
+
   img {
     cursor: pointer;
     transition: transform 0.3s ease;
