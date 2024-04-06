@@ -105,6 +105,7 @@ export const IntroLeftSection = styled.div`
 
   .bioText {
     color: ${({ theme }) => theme.colors.text2};
+    line-height: 1.6;
 
     @media (max-width: 950px) {
       text-align: center;
