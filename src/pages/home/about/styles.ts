@@ -41,7 +41,7 @@ export const InfoContainer = styled.div`
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.fonts.m2};
+    font-size: ${({ theme }) => theme.fonts.m3};
     color: ${({ theme }) => theme.colors.title};
     font-weight: 700;
     margin: 0.75rem 0 2rem 0;

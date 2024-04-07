@@ -12,6 +12,9 @@
     "Bio": "Welcome everyone!! My name is Roberto. I have a bachelor's degree in Computer Science and a master's degree in Cybersecurity. I'm a passionate fullstack developer based in Aracaju, Sergipe 📍",
     "AboutMe": "Hello, my name is Roberto. I hold a degree in Computer Science from the Federal University of Sergipe. Following my graduation, I completed my master's degree in Networks and Distributed Systems, with a focus on Cybersecurity, at the same institution. At the present moment, I work as a fullstack developer using ReactJS, React Native, and NodeJS stack. During my free time, I enjoy working on personal projects and deepening my studies in Cybersecurity.",
     "AboutMeTitle": "FullStack Developer based in Aracaju, Brazil 📍",
-    "AboutMeLabel": "ABOUT ME"
+    "AboutMeLabel": "ABOUT ME",
+    "PortfolioSubtitle": "Main projects developed throughout my career 🚀",
+    "ProjectTitle": "Finder - Find Insta Profiles",
+    "ProjectDescription": "Social network based on the Black Mirror series, where it's possible to find and rate nearby Instagram profiles."
   }
 }

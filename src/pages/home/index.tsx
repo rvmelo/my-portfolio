@@ -3,6 +3,7 @@ import { Layout } from '../../components/layout'
 import { HomeContainer } from './styles'
 import { Intro } from './intro'
 import { About } from './about'
+import { Portfolio } from './portfolio'
 
 export const Home: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ export const Home: React.FC = () => {
       <HomeContainer>
         <Intro />
         <About />
+        <Portfolio />
       </HomeContainer>
     </Layout>
   )
