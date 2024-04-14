@@ -15,7 +15,10 @@
     "AboutMeLabel": "SOBRE MIM",
     "PortfolioSubtitle": "Principais projetos desenvolvidos ao longo de minha carreira 🚀",
     "ProjectTitle": "Finder - Find Insta Profiles",
-    "ProjectDescription": "Rede social baseada na séria black mirror, onde é possível encontrar e avaliar perfis de instagram nas proximidades."
+    "ProjectDescription": "Rede social baseada na séria black mirror, onde é possível encontrar e avaliar perfis de instagram nas proximidades.",
+    "MasterProjectDescription": "Projeto de mestrado com foco na detecção de ataques no ambiente da nuvem. Esse projeto foi implementado na linguagem C e embasado nos princípios de imunologia, correlação de alertas e redes programáveis. O Projeto desenvolvido consiste em um sistema de detecção baseado em agentes distribuídos, com a finalidade de detectar ataques por meio da analise de dados estatísticos do tráfego de rede. Empregando algoritmos como seleção negativa, seleção clonal e rede imune, o sistema proposto foi concebido para detectar e neutralizar eficazmente ataques que explorem vulnerabilidades na infraestrutura da nuvem, contribuindo assim para a robustez e segurança dos sistemas digitais.",
+    "CLanguage": "Linaguagem C",
+    "MasterThesis": "Dissertação de Mestrado"
     
   }
 }

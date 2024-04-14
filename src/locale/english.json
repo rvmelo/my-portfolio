@@ -15,6 +15,10 @@
     "AboutMeLabel": "ABOUT ME",
     "PortfolioSubtitle": "Main projects developed throughout my career 🚀",
     "ProjectTitle": "Finder - Find Insta Profiles",
-    "ProjectDescription": "Social network based on the Black Mirror series, where it's possible to find and rate nearby Instagram profiles."
+    "ProjectDescription": "Social network based on the Black Mirror series, where it's possible to find and rate nearby Instagram profiles.",
+    "MasterProjectDescription": "Master's project focused on detecting attacks in cloud environments. This project was implemented in the C language and grounded in the principles of immunology, alert correlation, and programmable networks. The developed project consists of a detection system based on distributed agents, aimed at detecting attacks through the analysis of statistical data from network traffic. By employing algorithms such as negative selection, clonal selection, and immune network, the proposed system was designed to effectively detect and neutralize attacks exploiting vulnerabilities in cloud infrastructure, thus contributing to the resilience and security of digital systems.",
+    "CLanguage": "C Language",
+    "MasterThesis": "Master's Thesis"
+
   }
 }

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const ProjectContainer = styled.div`
+interface ProjectContainerProps {
+  imgBackgroundColor?: string
+}
+
+export const ProjectContainer = styled.div<ProjectContainerProps>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -8,13 +12,21 @@ export const ProjectContainer = styled.div`
 
   width: 100%;
 
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   img {
     width: 100%;
     object-fit: contain;
     border-radius: 8px;
     overflow: hidden;
-    background: black;
+    background: ${({ imgBackgroundColor }) =>
+      imgBackgroundColor || 'transparent'};
     padding: 0.5rem;
+    min-width: 24.75rem;
   }
 
   @media (max-width: 950px) {
@@ -23,6 +35,7 @@ export const ProjectContainer = styled.div`
       max-height: 30rem;
       width: 100%;
       height: 100%;
+      min-width: auto;
     }
 
     flex-direction: column;
