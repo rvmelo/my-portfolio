@@ -1,6 +1,7 @@
 import React from 'react'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { ContentContainer } from '../../../components/styles'
 import { useTranslation } from 'react-i18next'
 import {
@@ -10,6 +11,7 @@ import {
   StackContainer,
   ProjectInfo,
   LinkContainer,
+  LinksWrapper,
 } from './styles'
 import finderBanner from '../../../assets/finder-banner.png'
 import masterProject from '../../../assets/detection-system.png'
@@ -66,16 +68,28 @@ export const Portfolio: React.FC = () => {
               </a>
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </LinkContainer>
-            <LinkContainer>
-              <a
-                href="https://linktr.ee/rvtheone"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t('Papers')}
-              </a>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </LinkContainer>
+            <LinksWrapper>
+              <LinkContainer>
+                <a
+                  href="https://linktr.ee/rvtheone"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {t('Papers')}
+                </a>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </LinkContainer>
+              <LinkContainer>
+                <a
+                  href="https://github.com/rvmelo/Security-Model"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MAIS-IDS
+                </a>
+                <FontAwesomeIcon className="githubIcon" icon={faGithub} />
+              </LinkContainer>
+            </LinksWrapper>
           </ProjectInfo>
           <img src={masterProject} alt="detection-system" />
         </ProjectContainer>

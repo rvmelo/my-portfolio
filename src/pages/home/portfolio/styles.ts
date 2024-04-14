@@ -152,4 +152,16 @@ export const LinkContainer = styled.div`
   svg {
     color: ${({ theme }) => theme.colors.title};
   }
+
+  .githubIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+`
+
+export const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+  align-items: center;
 `
