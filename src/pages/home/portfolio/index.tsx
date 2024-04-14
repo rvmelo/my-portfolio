@@ -66,6 +66,16 @@ export const Portfolio: React.FC = () => {
               </a>
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </LinkContainer>
+            <LinkContainer>
+              <a
+                href="https://linktr.ee/rvtheone"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t('Papers')}
+              </a>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </LinkContainer>
           </ProjectInfo>
           <img src={masterProject} alt="detection-system" />
         </ProjectContainer>
