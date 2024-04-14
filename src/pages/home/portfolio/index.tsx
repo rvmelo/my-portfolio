@@ -34,6 +34,7 @@ export const Portfolio: React.FC = () => {
             <StackContainer>
               <span>React Native</span>
               <span>NodeJS</span>
+              <span>AWS</span>
             </StackContainer>
             <LinkContainer>
               <a

@@ -4,6 +4,7 @@ import { HomeContainer } from './styles'
 import { Intro } from './intro'
 import { About } from './about'
 import { Portfolio } from './portfolio'
+import { Contact } from './contact'
 
 export const Home: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ export const Home: React.FC = () => {
         <Intro />
         <About />
         <Portfolio />
+        <Contact />
       </HomeContainer>
     </Layout>
   )
