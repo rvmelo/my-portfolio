@@ -216,3 +216,35 @@ export const TechLogoContainer = styled.div`
     transform: translateY(-10px);
   }
 `
+
+export const CVWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+
+  margin-left: 1rem;
+
+  svg:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  svg {
+    width: 1rem;
+    height: 5rem;
+    cursor: pointer;
+    transition: color 0.23s ease-in-out;
+  }
+
+  span {
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.title};
+    white-space: nowrap;
+  }
+
+  .line {
+    width: 1px;
+    height: 1.5rem;
+    border: solid 1px ${({ theme }) => theme.colors.text};
+  }
+`

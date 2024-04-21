@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useTheme } from 'styled-components'
 import { ContentContainer } from '../../../components/styles'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import {
   IconWrapper,
   TechContainer,
@@ -11,6 +12,7 @@ import {
   IntroContentWrapper,
   TechLogoContainer,
   TechTitleContainer,
+  CVWrapper,
 } from './styles'
 import { useTranslation } from 'react-i18next'
 
@@ -18,6 +20,32 @@ export const Intro: React.FC = () => {
   const theme = useTheme()
 
   const { t } = useTranslation()
+
+  const handleDownload = async () => {
+    try {
+      // URL do arquivo PDF -> alterar quando estiver em produção
+      const pdfUrl = 'http://localhost:5173/resume.pdf'
+
+      // Baixa o arquivo PDF
+      const response = await fetch(pdfUrl)
+      const blob = await response.blob()
+
+      // Cria um link temporário para download do arquivo
+      const url = window.URL.createObjectURL(new Blob([blob]))
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', 'resume.pdf')
+
+      // Adiciona o link à página e simula o clique para iniciar o download
+      document.body.appendChild(link)
+      link.click()
+
+      // Remove o link temporário da página
+      document.body.removeChild(link)
+    } catch (error) {
+      console.error('Erro ao baixar o arquivo PDF:', error)
+    }
+  }
 
   return (
     <IntroContainer>
@@ -43,6 +71,15 @@ export const Intro: React.FC = () => {
               >
                 <FontAwesomeIcon icon={faGithub} color={theme.colors.title} />
               </a>
+              <CVWrapper>
+                <span>CV</span>
+                <div className="line" />
+                <FontAwesomeIcon
+                  onClick={handleDownload}
+                  icon={faFileAlt}
+                  color={theme.colors.title}
+                />
+              </CVWrapper>
             </IconWrapper>
           </IntroLeftSection>
           <div className="profilePicture" />
