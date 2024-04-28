@@ -15,12 +15,15 @@ import {
 } from './styles'
 import finderBanner from '../../../assets/finder-banner.png'
 import masterProject from '../../../assets/detection-system.png'
+import { useScrollHandler } from '../../../contexts/scrollHandler'
 
 export const Portfolio: React.FC = () => {
   const { t } = useTranslation()
 
+  const { portfolioRef } = useScrollHandler()
+
   return (
-    <PortfolioContainer>
+    <PortfolioContainer ref={portfolioRef}>
       <ContentContainer>
         <h2>PORTFOLIO</h2>
         <h1 className="subtitle">{t('PortfolioSubtitle')}</h1>

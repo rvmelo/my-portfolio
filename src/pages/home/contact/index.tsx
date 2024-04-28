@@ -11,12 +11,15 @@ import {
   LocationItem,
 } from './styles'
 import { useTranslation } from 'react-i18next'
+import { useScrollHandler } from '../../../contexts/scrollHandler'
 
 export const Contact: React.FC = () => {
   const { t } = useTranslation()
 
+  const { contactRef } = useScrollHandler()
+
   return (
-    <ContentContainer>
+    <ContentContainer ref={contactRef}>
       <ContactContainer>
         <HeaderContainer>
           <h2>{t('Contact').toUpperCase()}</h2>

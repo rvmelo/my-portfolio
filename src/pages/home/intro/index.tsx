@@ -15,9 +15,12 @@ import {
   CVWrapper,
 } from './styles'
 import { useTranslation } from 'react-i18next'
+import { useScrollHandler } from '../../../contexts/scrollHandler'
 
 export const Intro: React.FC = () => {
   const theme = useTheme()
+
+  const { introRef } = useScrollHandler()
 
   const { t } = useTranslation()
 
@@ -48,7 +51,7 @@ export const Intro: React.FC = () => {
   }
 
   return (
-    <IntroContainer>
+    <IntroContainer ref={introRef}>
       <ContentContainer>
         <IntroContentWrapper>
           <div className="mobileProfilePicture" />

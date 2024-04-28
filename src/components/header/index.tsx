@@ -10,12 +10,13 @@ import { useLanguageModal } from '../../contexts/languageModal'
 import { useTheme } from 'styled-components'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useScrollHandler } from '../../contexts/scrollHandler'
 
 interface HeaderProps {
-  handleHeaderModal: (value: boolean) => void
+  handleMobileHeaderModal: (value: boolean) => void
 }
 
-export const Header: React.FC<HeaderProps> = ({ handleHeaderModal }) => {
+export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
   const { t } = useTranslation()
 
   const theme = useTheme()
@@ -23,16 +24,19 @@ export const Header: React.FC<HeaderProps> = ({ handleHeaderModal }) => {
   const { setIsModalOpened, isModalOpened, handleLanguageSelection } =
     useLanguageModal()
 
+  const { handleScroll, contactRef, aboutRef, introRef, portfolioRef } =
+    useScrollHandler()
+
   return (
     <HeaderContainer>
       <span>rvtheone.dev</span>
       <NavigationWrapper>
         <nav>
           <ul>
-            <li>{t('Home')}</li>
-            <li>{t('About')}</li>
-            <li>{t('Projects')}</li>
-            <li>{t('Contact')}</li>
+            <li onClick={() => handleScroll(introRef)}>{t('Home')}</li>
+            <li onClick={() => handleScroll(aboutRef)}>{t('About')}</li>
+            <li onClick={() => handleScroll(portfolioRef)}>{t('Projects')}</li>
+            <li onClick={() => handleScroll(contactRef)}>{t('Contact')}</li>
             <li
               onClick={(event) => {
                 event.stopPropagation()
@@ -48,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({ handleHeaderModal }) => {
           <FontAwesomeIcon
             icon={faBars}
             color={theme.colors.footerBackground}
-            onClick={() => handleHeaderModal(true)}
+            onClick={() => handleMobileHeaderModal(true)}
           />
         </IconContainer>
 

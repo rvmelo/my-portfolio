@@ -1,37 +1,66 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HeaderModalContainer } from './styles'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
+import { useScrollHandler } from '../../contexts/scrollHandler'
 
 interface HeaderModalProps {
-  isHeaderModalOpened: boolean
-  handleHeaderModal: (value: boolean) => void
+  isHeaderMobileModalOpened: boolean
+  handleMobileHeaderModal: (value: boolean) => void
   handleMobileLanguageModal: (value: boolean) => void
 }
 
 export const HeaderModal: React.FC<HeaderModalProps> = ({
-  isHeaderModalOpened,
-  handleHeaderModal,
+  isHeaderMobileModalOpened,
+  handleMobileHeaderModal,
   handleMobileLanguageModal,
 }) => {
   const { t } = useTranslation()
 
+  const { handleScroll, aboutRef, contactRef, introRef, portfolioRef } =
+    useScrollHandler()
+
+  const scrollRefs = useMemo(
+    () => ({
+      aboutRef,
+      contactRef,
+      introRef,
+      portfolioRef,
+    }),
+    [aboutRef, contactRef, introRef, portfolioRef],
+  )
+
+  const [selectedRef, setSelectedRef] = useState<keyof typeof scrollRefs>()
+
+  const handleMobileScroll = (ref: keyof typeof scrollRefs) => {
+    handleMobileHeaderModal(false)
+    setSelectedRef(ref)
+  }
+
+  useEffect(() => {
+    if (!isHeaderMobileModalOpened && selectedRef) {
+      handleScroll(scrollRefs[selectedRef])
+    }
+  }, [isHeaderMobileModalOpened, handleScroll, scrollRefs, selectedRef])
+
   return (
     <HeaderModalContainer
-      data-state={isHeaderModalOpened ? 'opened' : 'closed'}
+      data-state={isHeaderMobileModalOpened ? 'opened' : 'closed'}
     >
       <FontAwesomeIcon
         icon={faClose}
-        onClick={() => handleHeaderModal(false)}
+        onClick={() => handleMobileHeaderModal(false)}
       />
 
       <ul>
-        <li>{t('Home')}</li>
-        <li>{t('About')}</li>
-        <li>{t('Projects')}</li>
-        <li>{t('Contact')}</li>
+        <li onClick={() => handleMobileScroll('introRef')}>{t('Home')}</li>
+        <li onClick={() => handleMobileScroll('aboutRef')}>{t('About')}</li>
+        <li onClick={() => handleMobileScroll('portfolioRef')}>
+          {t('Projects')}
+        </li>
+        <li onClick={() => handleMobileScroll('contactRef')}>{t('Contact')}</li>
         <li
           onClick={(event) => {
             event.stopPropagation()

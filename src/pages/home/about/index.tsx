@@ -4,12 +4,15 @@ import { AboutContainer, InfoContainer } from './styles'
 
 import remoteWorkPhoto from '../../../assets/remote-work.jpg'
 import { useTranslation } from 'react-i18next'
+import { useScrollHandler } from '../../../contexts/scrollHandler'
 
 export const About: React.FC = () => {
   const { t } = useTranslation()
 
+  const { aboutRef } = useScrollHandler()
+
   return (
-    <ContentContainer>
+    <ContentContainer ref={aboutRef}>
       <AboutContainer>
         <img src={remoteWorkPhoto} alt="remote-work" />
         <InfoContainer>

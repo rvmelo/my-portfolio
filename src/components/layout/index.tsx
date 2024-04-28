@@ -13,18 +13,19 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { handleCloseModal } = useLanguageModal()
 
-  const [isHeaderModalOpened, setIsHeaderModalOpened] = useState(false)
+  const [isHeaderMobileModalOpened, setIsHeaderMobileModalOpened] =
+    useState(false)
 
   const [isMobileLanguageModalOpened, setIsMobileLanguageModalOpened] =
     useState(false)
 
-  const handleHeaderModal = (value: boolean) => {
-    setIsHeaderModalOpened(value)
+  const handleMobileHeaderModal = (value: boolean) => {
+    setIsHeaderMobileModalOpened(value)
   }
 
   const handleMobileLanguageModal = (value: boolean) => {
     if (value) {
-      setIsHeaderModalOpened(false)
+      setIsHeaderMobileModalOpened(false)
     }
     setIsMobileLanguageModalOpened(value)
   }
@@ -32,17 +33,17 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <LayoutContainer onClick={handleCloseModal}>
       <HeaderModal
-        handleHeaderModal={handleHeaderModal}
-        isHeaderModalOpened={isHeaderModalOpened}
+        handleMobileHeaderModal={handleMobileHeaderModal}
+        isHeaderMobileModalOpened={isHeaderMobileModalOpened}
         handleMobileLanguageModal={handleMobileLanguageModal}
       />
       <MobileLanguageModal
         isMobileLanguageModalOpened={isMobileLanguageModalOpened}
         handleMobileLanguageModal={handleMobileLanguageModal}
       />
-      {!isHeaderModalOpened && (
+      {!isHeaderMobileModalOpened && (
         <>
-          <Header handleHeaderModal={handleHeaderModal} />
+          <Header handleMobileHeaderModal={handleMobileHeaderModal} />
           {children}
           <Footer />
         </>
