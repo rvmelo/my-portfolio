@@ -31,7 +31,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   }
 
   return (
-    <LayoutContainer onClick={handleCloseModal}>
+    <LayoutContainer
+      data-state={isHeaderMobileModalOpened ? 'hidden' : 'auto'}
+      onClick={handleCloseModal}
+    >
       <HeaderMobileModal
         handleMobileHeaderModal={handleMobileHeaderModal}
         isHeaderMobileModalOpened={isHeaderMobileModalOpened}
@@ -41,13 +44,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         isMobileLanguageModalOpened={isMobileLanguageModalOpened}
         handleMobileLanguageModal={handleMobileLanguageModal}
       />
-      {!isHeaderMobileModalOpened && (
-        <>
-          <Header handleMobileHeaderModal={handleMobileHeaderModal} />
-          {children}
-          <Footer />
-        </>
-      )}
+      <>
+        <Header handleMobileHeaderModal={handleMobileHeaderModal} />
+        {children}
+        <Footer />
+      </>
     </LayoutContainer>
   )
 }

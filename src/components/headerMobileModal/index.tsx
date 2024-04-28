@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { HeaderModalContainer } from './styles'
 
@@ -22,28 +22,10 @@ export const HeaderMobileModal: React.FC<HeaderModalProps> = ({
   const { handleScroll, aboutRef, contactRef, introRef, portfolioRef } =
     useScrollHandler()
 
-  const scrollRefs = useMemo(
-    () => ({
-      aboutRef,
-      contactRef,
-      introRef,
-      portfolioRef,
-    }),
-    [aboutRef, contactRef, introRef, portfolioRef],
-  )
-
-  const [selectedRef, setSelectedRef] = useState<keyof typeof scrollRefs>()
-
-  const handleMobileScroll = (ref: keyof typeof scrollRefs) => {
+  const handleMobileScroll = (ref: React.RefObject<HTMLDivElement>) => {
     handleMobileHeaderModal(false)
-    setSelectedRef(ref)
+    handleScroll(ref)
   }
-
-  useEffect(() => {
-    if (!isHeaderMobileModalOpened && selectedRef) {
-      handleScroll(scrollRefs[selectedRef])
-    }
-  }, [isHeaderMobileModalOpened, handleScroll, scrollRefs, selectedRef])
 
   return (
     <HeaderModalContainer
@@ -55,12 +37,12 @@ export const HeaderMobileModal: React.FC<HeaderModalProps> = ({
       />
 
       <ul>
-        <li onClick={() => handleMobileScroll('introRef')}>{t('Home')}</li>
-        <li onClick={() => handleMobileScroll('aboutRef')}>{t('About')}</li>
-        <li onClick={() => handleMobileScroll('portfolioRef')}>
+        <li onClick={() => handleMobileScroll(introRef)}>{t('Home')}</li>
+        <li onClick={() => handleMobileScroll(aboutRef)}>{t('About')}</li>
+        <li onClick={() => handleMobileScroll(portfolioRef)}>
           {t('Projects')}
         </li>
-        <li onClick={() => handleMobileScroll('contactRef')}>{t('Contact')}</li>
+        <li onClick={() => handleMobileScroll(contactRef)}>{t('Contact')}</li>
         <li
           onClick={(event) => {
             event.stopPropagation()
