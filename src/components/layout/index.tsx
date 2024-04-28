@@ -3,7 +3,7 @@ import { Header } from '../header'
 import { Footer } from '../footer'
 import { useLanguageModal } from '../../contexts/languageModal'
 import { LayoutContainer } from './styles'
-import { HeaderModal } from '../headerModal'
+import { HeaderMobileModal } from '../headerMobileModal'
 import { MobileLanguageModal } from '../mobileLanguageModal'
 
 interface LayoutProps {
@@ -32,7 +32,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <LayoutContainer onClick={handleCloseModal}>
-      <HeaderModal
+      <HeaderMobileModal
         handleMobileHeaderModal={handleMobileHeaderModal}
         isHeaderMobileModalOpened={isHeaderMobileModalOpened}
         handleMobileLanguageModal={handleMobileLanguageModal}

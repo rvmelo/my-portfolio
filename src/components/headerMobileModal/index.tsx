@@ -12,7 +12,7 @@ interface HeaderModalProps {
   handleMobileLanguageModal: (value: boolean) => void
 }
 
-export const HeaderModal: React.FC<HeaderModalProps> = ({
+export const HeaderMobileModal: React.FC<HeaderModalProps> = ({
   isHeaderMobileModalOpened,
   handleMobileHeaderModal,
   handleMobileLanguageModal,
