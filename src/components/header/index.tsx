@@ -6,7 +6,7 @@ import {
   NavigationWrapper,
 } from './styles'
 import { useTranslation } from 'react-i18next'
-import { useLanguageModal } from '../../contexts/languageModal'
+import { useLanguageModal } from '../../contexts/modal'
 import { useTheme } from 'styled-components'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,8 +21,11 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
 
   const theme = useTheme()
 
-  const { setIsModalOpened, isModalOpened, handleLanguageSelection } =
-    useLanguageModal()
+  const {
+    setIsLanguageModalOpened,
+    isLanguageModalOpened,
+    handleLanguageSelection,
+  } = useLanguageModal()
 
   const { handleScroll, contactRef, aboutRef, introRef, portfolioRef } =
     useScrollHandler()
@@ -40,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
             <li
               onClick={(event) => {
                 event.stopPropagation()
-                setIsModalOpened((prev) => !prev)
+                setIsLanguageModalOpened((prev) => !prev)
               }}
             >
               {t('Language')}
@@ -57,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
         </IconContainer>
 
         <LanguageModalContainer
-          data-state={isModalOpened ? 'opened' : 'closed'}
+          data-state={isLanguageModalOpened ? 'opened' : 'closed'}
         >
           <ul>
             <li onClick={() => handleLanguageSelection('pt')}>
