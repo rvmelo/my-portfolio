@@ -15,7 +15,9 @@ export const ModalContainer = styled.div`
 
   background: ${({ theme }) => theme.colors.background};
 
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   transition: all 0.3s ease;
 

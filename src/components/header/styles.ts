@@ -9,7 +9,11 @@ export const HeaderContainer = styled.section`
   padding: 25px 40px 25px 50px;
 
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.09);
-  position: relative;
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: ${({ theme }) => theme.colors.background};
 
   span {
     font-size: 1.2rem;

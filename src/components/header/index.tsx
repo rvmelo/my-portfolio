@@ -27,11 +27,17 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
     handleLanguageSelection,
   } = useLanguageModal()
 
-  const { handleScroll, contactRef, aboutRef, introRef, portfolioRef } =
-    useScrollHandler()
+  const {
+    handleScroll,
+    contactRef,
+    aboutRef,
+    introRef,
+    portfolioRef,
+    headerRef,
+  } = useScrollHandler()
 
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={headerRef}>
       <span>rvtheone.dev</span>
       <NavigationWrapper>
         <nav>

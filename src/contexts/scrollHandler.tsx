@@ -11,6 +11,7 @@ interface ScrollHandlerContextData {
   contactRef: React.RefObject<HTMLDivElement>
   introRef: React.RefObject<HTMLDivElement>
   portfolioRef: React.RefObject<HTMLDivElement>
+  headerRef: React.RefObject<HTMLDivElement>
 }
 
 const ScrollHandlerContext = createContext({} as ScrollHandlerContextData)
@@ -21,8 +22,16 @@ export const ScrollHandlerProvider = ({ children }: PropsWithChildren) => {
   const introRef = useRef<HTMLDivElement>(null)
   const portfolioRef = useRef<HTMLDivElement>(null)
 
+  const headerRef = useRef<HTMLDivElement>(null)
+
   const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' })
+
+    setTimeout(() => {
+      const headerHeight =
+        headerRef.current?.getBoundingClientRect().height || 0
+      window.scrollBy(0, -headerHeight)
+    }, 700)
   }
 
   return (
@@ -33,6 +42,7 @@ export const ScrollHandlerProvider = ({ children }: PropsWithChildren) => {
         contactRef,
         introRef,
         portfolioRef,
+        headerRef,
       }}
     >
       {children}

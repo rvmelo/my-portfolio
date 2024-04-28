@@ -15,7 +15,9 @@ export const HeaderModalContainer = styled.div`
 
     background: ${({ theme }) => theme.colors.background};
 
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     transition: all 0.3s ease;
 
@@ -43,8 +45,8 @@ export const HeaderModalContainer = styled.div`
     svg {
       cursor: pointer;
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 8rem;
+      right: 2rem;
 
       height: 1.5rem;
       width: 1.5rem;
