@@ -30,7 +30,11 @@ export const ScrollHandlerProvider = ({ children }: PropsWithChildren) => {
     setTimeout(() => {
       const headerHeight =
         headerRef.current?.getBoundingClientRect().height || 0
-      window.scrollBy(0, -headerHeight)
+      const currentScrollY = window.scrollY
+      window.scrollTo({
+        top: currentScrollY - headerHeight,
+        behavior: 'smooth',
+      })
     }, 700)
   }
 
