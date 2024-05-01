@@ -27,7 +27,7 @@ export const Intro: React.FC = () => {
   const handleDownload = async () => {
     try {
       // URL do arquivo PDF -> alterar quando estiver em produção
-      const pdfUrl = 'http://localhost:5173/resume.pdf'
+      const pdfUrl = `${import.meta.env.VITE_BASE_URL}/resume.pdf`
 
       // Baixa o arquivo PDF
       const response = await fetch(pdfUrl)
