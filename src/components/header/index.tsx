@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
         <IconContainer>
           <FontAwesomeIcon
             icon={faBars}
-            color={theme.colors.footerBackground}
+            color={theme.colors.title}
             onClick={() => handleMobileHeaderModal(true)}
           />
         </IconContainer>

@@ -68,7 +68,11 @@ export const LocationItem = styled.div`
   }
 `
 
-export const IconWrapper = styled.div`
+interface IconWrapperProps {
+  selectedTheme: 'light' | 'dark'
+}
+
+export const IconWrapper = styled.div<IconWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +81,11 @@ export const IconWrapper = styled.div`
 
   background: ${({ theme }) => theme.colors.background};
 
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 10px
+    ${({ selectedTheme }) =>
+      selectedTheme === 'light'
+        ? 'rgba(0, 0, 0, 0.09)'
+        : 'rgba(255, 255, 255, 0.15)'};
   position: relative;
 
   width: 3rem;

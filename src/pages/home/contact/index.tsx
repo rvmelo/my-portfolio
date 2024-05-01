@@ -12,11 +12,14 @@ import {
 } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useScrollHandler } from '../../../contexts/scrollHandler'
+import { useUserTheme } from '../../../contexts/theme'
 
 export const Contact: React.FC = () => {
   const { t } = useTranslation()
 
   const { contactRef } = useScrollHandler()
+
+  const { userTheme } = useUserTheme()
 
   return (
     <ContentContainer ref={contactRef}>
@@ -27,7 +30,7 @@ export const Contact: React.FC = () => {
         </HeaderContainer>
         <LocationContainer>
           <LocationItem>
-            <IconWrapper>
+            <IconWrapper selectedTheme={userTheme}>
               <FontAwesomeIcon className="githubIcon" icon={faMap} />
             </IconWrapper>
             <ItemInfo>
@@ -36,7 +39,7 @@ export const Contact: React.FC = () => {
             </ItemInfo>
           </LocationItem>
           <LocationItem>
-            <IconWrapper>
+            <IconWrapper selectedTheme={userTheme}>
               <FontAwesomeIcon className="githubIcon" icon={faMailBulk} />
             </IconWrapper>
             <ItemInfo>
