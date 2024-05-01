@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Header } from '../header'
 import { Footer } from '../footer'
-import { useLanguageModal } from '../../contexts/modal'
+import { useModal } from '../../contexts/modal'
 import { LayoutContainer } from './styles'
 import { HeaderMobileModal } from '../headerMobileModal'
 import { MobileLanguageModal } from '../mobileLanguageModal'
@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const { handleCloseLanguageModal } = useLanguageModal()
+  const { handleCloseModals } = useModal()
 
   const [isHeaderMobileModalOpened, setIsHeaderMobileModalOpened] =
     useState(false)
@@ -31,7 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   }
 
   return (
-    <LayoutContainer onClick={handleCloseLanguageModal}>
+    <LayoutContainer onClick={handleCloseModals}>
       <HeaderMobileModal
         handleMobileHeaderModal={handleMobileHeaderModal}
         isHeaderMobileModalOpened={isHeaderMobileModalOpened}

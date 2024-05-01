@@ -4,13 +4,18 @@ import {
   IconContainer,
   LanguageModalContainer,
   NavigationWrapper,
+  ThemeIconContainer,
+  ThemeModalContainer,
 } from './styles'
 import { useTranslation } from 'react-i18next'
-import { useLanguageModal } from '../../contexts/modal'
+import { useModal } from '../../contexts/modal'
 import { useTheme } from 'styled-components'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useScrollHandler } from '../../contexts/scrollHandler'
+import { useUserTheme } from '../../contexts/theme'
+import { CiDark } from 'react-icons/ci'
+import { MdOutlineLightMode } from 'react-icons/md'
 
 interface HeaderProps {
   handleMobileHeaderModal: (value: boolean) => void
@@ -21,11 +26,16 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
 
   const theme = useTheme()
 
+  const { userTheme } = useUserTheme()
+
   const {
     setIsLanguageModalOpened,
     isLanguageModalOpened,
+    isThemeModalOpened,
+    setIsThemeModalOpened,
     handleLanguageSelection,
-  } = useLanguageModal()
+    handleThemeSelection,
+  } = useModal()
 
   const {
     handleScroll,
@@ -65,6 +75,19 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
           />
         </IconContainer>
 
+        <ThemeIconContainer
+          onClick={(event) => {
+            event.stopPropagation()
+            setIsThemeModalOpened((prev) => !prev)
+          }}
+        >
+          {userTheme === 'light' ? (
+            <MdOutlineLightMode className="light" />
+          ) : (
+            <CiDark className="dark" />
+          )}
+        </ThemeIconContainer>
+
         <LanguageModalContainer
           data-state={isLanguageModalOpened ? 'opened' : 'closed'}
         >
@@ -77,6 +100,15 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
             </li>
           </ul>
         </LanguageModalContainer>
+        <ThemeModalContainer
+          data-state={isThemeModalOpened ? 'opened' : 'closed'}
+        >
+          <ul>
+            <li onClick={() => handleThemeSelection('light')}>{t('Light')}</li>
+            <li onClick={() => handleThemeSelection('dark')}>{t('Dark')}</li>
+            <li onClick={() => undefined}>{t('System')}</li>
+          </ul>
+        </ThemeModalContainer>
       </NavigationWrapper>
     </HeaderContainer>
   )

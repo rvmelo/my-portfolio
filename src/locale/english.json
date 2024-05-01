@@ -22,7 +22,10 @@
     "Papers": "Papers",
     "ContactMessage": "Please, feel free to contact me!! 👇",
     "Location": "Location",
-    "Mail": "Mail"
+    "Mail": "Mail",
+    "Light": "Light",
+    "Dark": "Dark",
+    "System": "System"
 
   }
 }

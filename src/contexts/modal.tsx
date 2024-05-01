@@ -6,12 +6,16 @@ import React, {
   useContext,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useUserTheme } from './theme'
 
 interface ModalContextData {
   isLanguageModalOpened: boolean
   setIsLanguageModalOpened: React.Dispatch<SetStateAction<boolean>>
-  handleCloseLanguageModal: () => void
+  isThemeModalOpened: boolean
+  setIsThemeModalOpened: React.Dispatch<SetStateAction<boolean>>
   handleLanguageSelection: (value: 'en' | 'pt') => void
+  handleCloseModals: () => void
+  handleThemeSelection: (value: 'light' | 'dark') => void
 }
 
 const ModalContext = createContext({} as ModalContextData)
@@ -21,24 +25,38 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
     i18n: { changeLanguage },
   } = useTranslation()
 
-  const [isLanguageModalOpened, setIsLanguageModalOpened] = useState(false)
+  const { setUserTheme } = useUserTheme()
 
-  const handleCloseLanguageModal = () => {
+  const [isLanguageModalOpened, setIsLanguageModalOpened] = useState(false)
+  const [isThemeModalOpened, setIsThemeModalOpened] = useState(false)
+
+  const handleCloseModals = () => {
     setIsLanguageModalOpened(false)
+    setIsThemeModalOpened(false)
   }
 
   const handleLanguageSelection = (value: 'en' | 'pt') => {
     changeLanguage(value)
+    setIsLanguageModalOpened(false)
+    setIsThemeModalOpened(false)
+  }
+
+  const handleThemeSelection = (value: 'light' | 'dark') => {
+    setUserTheme(value)
+    setIsThemeModalOpened(false)
     setIsLanguageModalOpened(false)
   }
 
   return (
     <ModalContext.Provider
       value={{
-        handleCloseLanguageModal,
         handleLanguageSelection,
+        handleThemeSelection,
+        handleCloseModals,
         isLanguageModalOpened,
         setIsLanguageModalOpened,
+        isThemeModalOpened,
+        setIsThemeModalOpened,
       }}
     >
       {children}
@@ -46,13 +64,11 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
   )
 }
 
-export function useLanguageModal() {
+export function useModal() {
   const context = useContext(ModalContext)
 
   if (!context) {
-    throw new Error(
-      'Language Modal Context must be used within a Language Modal Provider',
-    )
+    throw new Error('Modal Context must be used within a Modal Provider')
   }
 
   return context

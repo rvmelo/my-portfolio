@@ -29,6 +29,10 @@ export const HeaderContainer = styled.section`
 
 export const NavigationWrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 
   nav ul {
     list-style: none;
@@ -72,7 +76,7 @@ export const LanguageModalContainer = styled.div`
   position: absolute;
   border-radius: 8px;
   top: 60px;
-  right: -30px;
+  right: 1rem;
   overflow: hidden;
 
   &[data-state='opened'] {
@@ -112,4 +116,40 @@ export const LanguageModalContainer = styled.div`
     background: rgb(34, 197, 94, 0.3);
     transition: all 0.23s;
   }
+`
+
+export const ThemeModalContainer = styled(LanguageModalContainer)`
+  right: -30px;
+`
+
+export const ThemeIconContainer = styled.div`
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .light {
+    height: 1.7rem;
+    width: 1.7rem;
+    color: ${({ theme }) => theme.colors.title};
+  }
+
+  .dark {
+    height: 1.7rem;
+    width: 1.7rem;
+    color: ${({ theme }) => theme.colors.title};
+    margin-bottom: 3px;
+  }
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  /* transition: all 0.23s;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.background2};
+  } */
 `
