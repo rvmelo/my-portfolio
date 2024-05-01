@@ -4,6 +4,8 @@ import glitchPicture01 from '../../../assets/eu-glitch-01.png'
 import glitchPicture02 from '../../../assets/eu-glitch-02.png'
 import glitchPicture03 from '../../../assets/eu-glitch-03.png'
 
+import linkedinPicture from '../../../assets/eu-linkedin.jpg'
+
 export const IntroContainer = styled.div`
   background: ${({ theme }) => theme.colors.background2};
 `
@@ -38,6 +40,20 @@ const GlitchAnimation = keyframes`
     }
 `
 
+const MorphAnimation = keyframes`
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+`
+
 export const IntroContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -63,20 +79,26 @@ export const IntroContentWrapper = styled.div`
       display: inline;
       min-width: 15rem;
       min-height: 15rem;
-      border-radius: 100%;
-      background-image: url(${profilePicture});
+      /* border-radius: 100%; */
+      /* background-image: url(${profilePicture}); */
+      border: 3px solid ${({ theme }) => theme.colors.title};
+      background-image: url(${linkedinPicture});
       background-size: cover;
-      animation: ${GlitchAnimation} 3.5s infinite steps(1);
+      /* animation: ${GlitchAnimation} 3.5s infinite steps(1); */
+      animation: ${MorphAnimation} 8s ease-in-out infinite;
     }
   }
 
   .profilePicture {
     min-width: 18.75rem;
     min-height: 18.75rem;
-    border-radius: 100%;
-    background-image: url(${profilePicture});
+    border: 3px solid ${({ theme }) => theme.colors.title};
+    /* border-radius: 100%; */
+    /* background-image: url(${profilePicture}); */
+    background-image: url(${linkedinPicture});
     background-size: cover;
-    animation: ${GlitchAnimation} 3.5s infinite steps(1);
+    /* animation: ${GlitchAnimation} 3.5s infinite steps(1); */
+    animation: ${MorphAnimation} 8s ease-in-out infinite;
 
     @media (max-width: 950px) {
       display: none;
