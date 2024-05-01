@@ -253,7 +253,7 @@ export const CVWrapper = styled.div`
 
   svg {
     width: 1rem;
-    height: 5rem;
+    height: 2rem;
     cursor: pointer;
     transition: color 0.23s ease-in-out;
   }

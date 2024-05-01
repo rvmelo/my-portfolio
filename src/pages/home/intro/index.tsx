@@ -24,33 +24,6 @@ export const Intro: React.FC = () => {
 
   const { t } = useTranslation()
 
-  // Baixa arquivo PDF
-  const handleDownload = async () => {
-    try {
-      // URL do arquivo PDF -> alterar quando estiver em produção
-      const pdfUrl = `${import.meta.env.VITE_BASE_URL}/resume.pdf`
-
-      // Baixa o arquivo PDF
-      const response = await fetch(pdfUrl)
-      const blob = await response.blob()
-
-      // Cria um link temporário para download do arquivo
-      const url = window.URL.createObjectURL(new Blob([blob]))
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', 'resume.pdf')
-
-      // Adiciona o link à página e simula o clique para iniciar o download
-      document.body.appendChild(link)
-      link.click()
-
-      // Remove o link temporário da página
-      document.body.removeChild(link)
-    } catch (error) {
-      console.error('Erro ao baixar o arquivo PDF:', error)
-    }
-  }
-
   return (
     <IntroContainer ref={introRef}>
       <ContentContainer>
@@ -78,11 +51,16 @@ export const Intro: React.FC = () => {
               <CVWrapper>
                 <span>CV</span>
                 <div className="line" />
-                <FontAwesomeIcon
-                  onClick={handleDownload}
-                  icon={faFileAlt}
-                  color={theme.colors.title}
-                />
+                <a
+                  href={`${import.meta.env.VITE_BASE_URL}/resume.pdf`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faFileAlt}
+                    color={theme.colors.title}
+                  />
+                </a>
               </CVWrapper>
             </IconWrapper>
           </IntroLeftSection>
