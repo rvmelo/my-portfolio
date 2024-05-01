@@ -24,6 +24,7 @@ export const Intro: React.FC = () => {
 
   const { t } = useTranslation()
 
+  // Baixa arquivo PDF
   const handleDownload = async () => {
     try {
       // URL do arquivo PDF -> alterar quando estiver em produção
