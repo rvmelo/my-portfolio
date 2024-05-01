@@ -29,10 +29,10 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
   const { userTheme } = useUserTheme()
 
   const {
-    setIsLanguageModalOpened,
+    handleLanguageModal,
+    handleThemeModal,
     isLanguageModalOpened,
     isThemeModalOpened,
-    setIsThemeModalOpened,
     handleLanguageSelection,
     handleThemeSelection,
   } = useModal()
@@ -59,7 +59,8 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
             <li
               onClick={(event) => {
                 event.stopPropagation()
-                setIsLanguageModalOpened((prev) => !prev)
+                const value = !isLanguageModalOpened
+                handleLanguageModal(value)
               }}
             >
               {t('Language')}
@@ -78,7 +79,8 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
         <ThemeIconContainer
           onClick={(event) => {
             event.stopPropagation()
-            setIsThemeModalOpened((prev) => !prev)
+            const value = !isThemeModalOpened
+            handleThemeModal(value)
           }}
         >
           {userTheme === 'light' ? (
