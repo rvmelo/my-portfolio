@@ -7,7 +7,7 @@ interface ModalContextData {
   isThemeModalOpened: boolean
   handleLanguageSelection: (value: 'en' | 'pt') => void
   handleCloseModals: () => void
-  handleThemeSelection: (value: 'light' | 'dark') => void
+  handleThemeSelection: (value: 'light' | 'dark' | 'system') => void
   handleLanguageModal: (value: boolean) => void
   handleThemeModal: (value: boolean) => void
 }
@@ -19,7 +19,7 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
     i18n: { changeLanguage },
   } = useTranslation()
 
-  const { setUserTheme } = useUserTheme()
+  const { setUserTheme, verifySystemTheme } = useUserTheme()
 
   const [isLanguageModalOpened, setIsLanguageModalOpened] = useState(false)
   const [isThemeModalOpened, setIsThemeModalOpened] = useState(false)
@@ -55,8 +55,10 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
     setIsThemeModalOpened(false)
   }
 
-  const handleThemeSelection = (value: 'light' | 'dark') => {
-    setUserTheme(value)
+  const handleThemeSelection = (value: 'light' | 'dark' | 'system') => {
+    const auxValue = value === 'system' ? verifySystemTheme() : value
+
+    setUserTheme(auxValue)
     setIsThemeModalOpened(false)
     setIsLanguageModalOpened(false)
   }

@@ -108,7 +108,9 @@ export const Header: React.FC<HeaderProps> = ({ handleMobileHeaderModal }) => {
           <ul>
             <li onClick={() => handleThemeSelection('light')}>{t('Light')}</li>
             <li onClick={() => handleThemeSelection('dark')}>{t('Dark')}</li>
-            <li onClick={() => undefined}>{t('System')}</li>
+            <li onClick={() => handleThemeSelection('system')}>
+              {t('System')}
+            </li>
           </ul>
         </ThemeModalContainer>
       </NavigationWrapper>
