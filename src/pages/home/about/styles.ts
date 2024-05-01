@@ -38,6 +38,7 @@ export const InfoContainer = styled.div`
     font-size: ${({ theme }) => theme.fonts.m};
     color: ${({ theme }) => theme.colors.primary};
     font-weight: 700;
+    white-space: nowrap;
   }
 
   h1 {
