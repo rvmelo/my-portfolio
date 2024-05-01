@@ -29,7 +29,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     min-width: 24.75rem;
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 1280px) {
     img {
       max-width: 30rem;
       max-height: 30rem;
@@ -75,7 +75,7 @@ export const InfoContainer = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 1280px) {
     align-items: center;
 
     h1 {
@@ -107,7 +107,7 @@ export const PortfolioContainer = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.colors.background2};
 
-  @media (max-width: 950px) {
+  @media (max-width: 1280px) {
     h2 {
       text-align: center;
     }
