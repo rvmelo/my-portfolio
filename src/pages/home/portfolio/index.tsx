@@ -39,14 +39,12 @@ export const Portfolio: React.FC = () => {
               <span>NodeJS</span>
               <span>AWS</span>
             </StackContainer>
-            <LinkContainer>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.facetrack"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Play Store
-              </a>
+            <LinkContainer
+              href="https://play.google.com/store/apps/details?id=com.facetrack"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Play Store</span>
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </LinkContainer>
           </ProjectInfo>
@@ -62,35 +60,29 @@ export const Portfolio: React.FC = () => {
               <span>AWS</span>
               <span>Kali Linux</span>
             </StackContainer>
-            <LinkContainer>
-              <a
-                href="https://ri.ufs.br/handle/riufs/10758"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t('MasterThesis')}
-              </a>
+            <LinkContainer
+              href="https://ri.ufs.br/handle/riufs/10758"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{t('MasterThesis')}</span>
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </LinkContainer>
             <LinksWrapper>
-              <LinkContainer>
-                <a
-                  href="https://linktr.ee/rvtheone"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t('Papers')}
-                </a>
+              <LinkContainer
+                href="https://linktr.ee/rvtheone"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{t('Papers')}</span>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </LinkContainer>
-              <LinkContainer>
-                <a
-                  href="https://github.com/rvmelo/Security-Model"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  MAIS-IDS
-                </a>
+              <LinkContainer
+                href="https://github.com/rvmelo/Security-Model"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>MAIS-IDS</span>
                 <FontAwesomeIcon className="githubIcon" icon={faGithub} />
               </LinkContainer>
             </LinksWrapper>

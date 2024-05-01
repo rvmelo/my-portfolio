@@ -133,7 +133,7 @@ export const StackContainer = styled.div`
   }
 `
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -141,9 +141,11 @@ export const LinkContainer = styled.div`
 
   margin-top: 0.5rem;
 
-  a {
+  text-decoration: none;
+
+  span {
     font-size: ${({ theme }) => theme.fonts.m};
-    text-decoration: none;
+
     cursor: pointer;
     color: ${({ theme }) => theme.colors.title};
     font-weight: 700;
