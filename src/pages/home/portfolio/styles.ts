@@ -130,6 +130,7 @@ export const StackContainer = styled.div`
     font-size: ${({ theme }) => theme.fonts.m};
     color: ${({ theme }) => theme.colors.title};
     font-weight: 700;
+    white-space: nowrap;
   }
 `
 
@@ -149,6 +150,7 @@ export const LinkContainer = styled.a`
     cursor: pointer;
     color: ${({ theme }) => theme.colors.title};
     font-weight: 700;
+    white-space: nowrap;
   }
 
   svg {
